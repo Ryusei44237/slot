@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+          font-size: 2rem;
+          text-align: center;
+          margin: 10px;
+          padding: 10px;
+        }
+  
+        .parent {
+          background: gray;
+          display: flex;
+          width: 700px;
+          height: 400px;
+          margin-top: 250px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+  
+        .child {
+          background:white;
+          width: 400px;
+          text-align: center;
+        }
+  
+        @media screen and (max-width: 900px) {
+          .parent {
+            flex-wrap: wrap;
+          }
+        }
+  
+        @media screen and (max-width: 500px) {
+          .parent {
+            display: block;
+          }
+        }
+        table{
+          margin: auto;
+          text-align: center;
+        }
+        button{
+display:inline-block;/*コレ*/
+}
+img {
+width: 120px;
+height: 80px;
+}
+      </style>
+    </head>
+    <body>
+      <!-- スロット枠-->
+      <div class="parent">
+        <div class="child"><div id="target1"><Marquee direction="down" height="300" width="100" scrollamount="80" id="marquee1"><IMG src="higutchi.png"></Marquee></div></div>
+        <div class="child"><div id="target2"><Marquee direction="down" height="300" width="100" scrollamount="80" id="marquee2"><IMG src="higutchi.png"></Marquee></div></div>
+        <div class="child"><div id="target3"><Marquee direction="down" height="300" width="100" scrollamount="80" id="marquee3"><IMG src="higutchi.png"></Marquee></div></div>
+      </div>
+      <!-- ここまで-->
+      <input type="button" value="Start Marquee" id="start" onClick="document.getElementById('marquee1').start();document.getElementById('marquee2').start();document.getElementById('marquee3').start();start();test()"/>
+      <table>
+        <tr>
+        <td> <input type="button" value="Stop Marquee" id="button1" onClick="document.getElementById('marquee1').stop();count1();test()"/></td>
+        <td><input type="button" value="Stop Marquee" id="button2" onClick="document.getElementById('marquee2').stop();count2();test()"/></td>
+        <td><input type="button" value="Stop Marquee" id="button3" onClick="document.getElementById('marquee3').stop();count3();test()"/></td>
+        </tr>
+        </table>
+        <script>
+          var count=0;
+          function start(){
+            button = document.getElementById("start()");
+          }
+          function count1(){
+            count+=1;
+            console.log(count);
+            button1 = document.getElementById("button1");
+          }
+          function count2(){
+            count+=1;
+            console.log(count);
+            button2 = document.getElementById("button2");
+          }
+          function count3(){
+            count+=1;
+            console.log(count);
+            button3 = document.getElementById("button3");
+          }
+          function test(){
+            if(count==3){
+              count=0;
+              console.log(count);
+            }
+          }
+        </script>
+</body>
+</html>
